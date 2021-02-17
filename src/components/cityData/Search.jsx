@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
 
 class Search extends Component {
-  state = {
-    text: ''
-  }
+  state = { text: '' }
 
   onChange = (e) => this.setState({ [e.target.name]: e.target.value });
+
+  filterData = (e) => {
+    this.props.searchData(this.state.text);
+  }
 
   onSubmit = (e) => {
     e.preventDefault();
@@ -23,6 +25,7 @@ class Search extends Component {
             placeholder='Search'
             value={this.state.text}
             autoComplete='off'
+            onKeyUp={this.filterData}
             onChange={this.onChange}
             className={'search-input'}
           />

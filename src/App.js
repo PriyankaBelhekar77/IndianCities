@@ -31,8 +31,12 @@ class App extends Component {
   }
 
   searchData = (text) => {
-    const filterData = this.state.cityData.filter((value) => value.City == text || value.State == text || value.District == text);
-    this.setState({ filterData: filterData });
+    const createFilter = this.state.cityData.filter((data) => {
+      return data.City.toLowerCase().indexOf(text.toLowerCase()) !== -1 ||
+        data.State.toLowerCase().indexOf(text.toLowerCase()) !== -1 ||
+        data.District.toLowerCase().indexOf(text.toLowerCase()) !== -1
+    });
+    this.setState({ filterData: createFilter });
   }
 
   deleteCity = (id) => {
@@ -62,7 +66,7 @@ class App extends Component {
 
   addCityData = (data) => {
     console.log('data', data)
-    this.setState({ cityData: [...this.state.cityData, data]})
+    this.setState({ cityData: [...this.state.cityData, data] })
   }
 
   render() {
@@ -75,10 +79,14 @@ class App extends Component {
             <Switch>
               <Route exact path='/' render={props => (
                 <Fragment>
-                  <Search searchData={this.searchData} />
+                  <Search searchData={this.searchData} cityData={cityData} />
                   <AddCity cityData={cityData} addCityData={this.addCityData} />
                   {
-                    filterData.length ? <City loading={loading} cityData={filterData} /> :
+                    filterData.length ? <City loading={loading} cityData={filterData}
+                      deleteCity={this.deleteCity}
+                      shortlistCity={this.shortlistCity}
+                      removeShortlistCity={this.removeShortlistCity}
+                    /> :
                       <All
                         loading={loading}
                         cityData={cityData}
