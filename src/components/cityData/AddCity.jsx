@@ -41,6 +41,7 @@ class AddCity extends Component {
                     value={this.state.text}
                     autoComplete='off'
                     onChange={this.onChange}
+                    style={{margine: 0}}
                   />
                   <label htmlFor='state'>State Name</label>
                   <select id='State' name='State'>Î
