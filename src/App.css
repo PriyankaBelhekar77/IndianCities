@@ -1,0 +1,135 @@
+/* Global Styles */
+:root {
+  --primary-color: #dc3545;
+  --dark-color: #333333;
+  --light-color: #f4f4f4;
+  --danger-color: #dc3545;
+  --success-color: #28a745;
+}
+
+.bg-primary {
+  background: var(--dark-color);
+  color: #fff;
+}
+
+.btn {
+  display: inline-block;
+  background: var(--light-color);
+  color: #333;
+  padding: 0.4rem 1.3rem;
+  font-size: 1rem;
+  border: none;
+  cursor: pointer;
+  margin-right: 0.5rem;
+  transition: opacity 0.2s ease-in;
+  outline: none;
+}
+
+.btn-block {
+  display: block;
+  margin: 1.2rem 0;
+}
+
+.btn-dark {
+  background: var(--dark-color);
+  color: #fff;
+}
+
+.container {
+  max-width: 1100px;
+  margin: auto;
+  overflow: hidden;
+  padding: 0 2rem;
+}
+
+input {
+  margin: 1.2rem 0;
+}
+
+.form-text {
+  display: block;
+  margin-top: 0.3rem;
+  color: #888;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.7rem 2rem;
+  z-index: 1;
+  width: 100%;
+  opacity: 0.9;
+  margin-bottom: 1rem;
+}
+
+.navbar ul {
+  display: flex;
+}
+
+ul {
+  list-style: none;
+}
+.navbar .welcome span {
+  margin-right: 0.6rem;
+} 
+
+a {
+  color: var(--primary-color);
+  text-decoration: none;
+}
+
+
+.navbar ul {
+  display: flex;
+}
+
+.navbar a {
+  color: #fff;
+  padding: 0.45rem;
+  margin: 0 0.25rem;
+  font-size: 1.3rem;
+}
+
+.navbar a:hover {
+  color: var(--success-color);
+}
+
+/* Forms */
+input,
+form 
+{
+  margin: 1.2rem 0;
+  display: flex;
+}
+
+label {
+  padding-right: 10px;
+}
+
+.search-input {
+  display: block;
+  width: 100%;
+  padding: .4rem;
+  font-size: 1.2rem;
+  border: 1px solid #ccc;
+  margin: 1.2rem 0;
+}
+
+.form-cntr{
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+}
+
+.add-city-data {
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+}
+
+.city-item {
+  display: flex;
+  flex-direction: row;
+}
