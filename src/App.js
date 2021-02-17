@@ -40,14 +40,18 @@ class App extends Component {
   }
 
   deleteCity = (id) => {
-    const filterData = this.state.cityData.filter((value, index) => id !== index);
+    const filterData = this.state.cityData.filter((value) => id !== value.id);
     this.setState({ cityData: filterData });
   }
 
   shortlistCity = (id) => {
     this.setState(prevState => {
-      let newState = { ...prevState.cityData };
-      newState[id].shortlist = true;
+      const newState = [...prevState.cityData];
+      newState.forEach((data) => {
+        if (data.id === id) {
+          data.shortlist = true;
+        }
+      });
       return { newState };
     });
   }
