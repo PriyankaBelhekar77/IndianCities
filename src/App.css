@@ -25,6 +25,10 @@
   outline: none;
 }
 
+.btn:disabled {
+  cursor: not-allowed;
+}
+
 .btn-block {
   display: block;
   margin: 1.2rem 0;
