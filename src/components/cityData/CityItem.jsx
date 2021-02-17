@@ -25,7 +25,7 @@ const CityItem = ({ cityData, deleteCity, shortlistCity, removeShortlistCity }) 
                 <div className='city-item'>
                   <button className='btn btn-dark' disabled={city.shortlist}
                     onClick={(e) => {
-                      shortlistCity(id);
+                      shortlistCity(city.id);
                     }}>Shortlist</button>
                   {city.shortlist && <button className='btn btn-dark' onClick={(e) => {
                     removeShortlistCity(city.id);
