@@ -31,7 +31,7 @@ const CityItem = ({ cityData, deleteCity, shortlistCity, removeShortlistCity }) 
                     removeShortlistCity(city.id);
                   }}>Remove</button>}
                   <button className='btn btn-dark' onClick={() => {
-                    deleteCity(id);
+                    deleteCity(city.id);
                   }}>Delete</button>
                 </div>
               </Cell>
